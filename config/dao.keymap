@@ -12,81 +12,187 @@
 #define LWR 1
 #define RSE 2
 #define ADJ 3
+#define LR_NUM 4
+#define LR_DEL 5
+#define LR_NAV 6
 
-&lt {
-    quick_tap_ms = <200>;
-};
-
-&mt {
-    quick_tap_ms = <200>;
-};
+&lt { quick_tap_ms = <200>; };
+&mt { quick_tap_ms = <200>;}; 
 
 / {
-    keymap {
-        compatible = "zmk,keymap";
-
-        default_layer {
-            // -----------------------------------------------------------------------------------------
-            // |  GUI |   ~  |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  |  [   | GUI/] |
-            //        | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |CTRL/'|
-            //        | LALT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | RALT |
-            //                           | RSE | SPC | LWR |   | LWR | BKSP | RSE |
-
-            bindings = <
-          &kp GRAVE  &kp N1  &kp N2  &kp N3     &kp N4           &kp N5       &kp N6     &kp N7          &kp N8     &kp N9   &kp N0    &kp MINUS
-&kp LWIN  &kp GRAVE  &kp Q   &kp W   &kp E      &kp R            &kp T        &kp Y      &kp U           &kp I      &kp O    &kp P     &kp LBKT       &mt RWIN RBKT
-          &kp ESC    &kp A   &kp S   &kp D      &kp F            &kp G        &kp H      &kp J           &kp K      &kp L    &kp SEMI  &mt RCTRL SQT
-          &kp LALT   &kp Z   &kp X   &kp C      &kp V            &kp B        &kp N      &kp M           &kp COMMA  &kp DOT  &kp FSLH  &mt RALT BSLH
-                                     &lt 2 TAB  &mt LSHFT SPACE  &lt 1 RET    &lt 1 ESC  &mt RSHFT BSPC  &lt 2 DEL
-            >;
+    macros {
+        delete_end_line: delete_end_line {
+            label = "delete_end_line";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp LS(END) &kp DEL>
+                ;
+        };
+        delete_begin_line: delete_begin_line {
+            label = "delete_begin_line";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp LS(HOME) &kp DEL>
+                ;
         };
 
-        lower_layer {
-            // -----------------------------------------------------------------------------------------
-            // |     |  _  |  F1 |  F2 |  F3 |  F4 |  F5 |   |  F6 |  F7 |  F8 |  F9 | F10 | F11 | F12 |
-            //       |  +  |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  |  -  |
-            //       |  =  |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  |     |
-            //                    | GUI |     | SPC |   | ENT |     | ALT |
+    };
+};
 
-            bindings = <
-        &trans          &trans    &trans  &trans     &trans    &trans       &trans     &trans    &trans     &trans    &trans    &trans
-&trans  &kp UNDER       &kp F1    &kp F2  &kp F3     &kp F4    &kp F5       &kp F6     &kp F7    &kp F8     &kp F9    &kp F10   &kp F11          &mt RGUI F12
-        &mt LCTRL PLUS  &kp EXCL  &kp AT  &kp HASH   &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS  &kp STAR   &kp LPAR  &kp RPAR  &mt RCTRL MINUS
-        &mt LALT EQUAL  &kp N1    &kp N2  &kp N3     &kp N4    &kp N5       &kp N6     &kp N7    &kp N8     &kp N9    &kp N0    &trans
-                                          &lt 3 TAB  &trans    &trans       &trans     &trans    &lt 3 DEL
-            >;
+
+/ {
+    behaviors {
+        alttab_b_or_s: alt_tab_backward {
+            compatible = "zmk,behavior-mod-morph";
+            label = "ALT_TAB_B";
+            #binding-cells = <0>;
+            bindings = <&kp S>, <&kp LS(TAB)>;
+            mods = <(MOD_LALT)>;
+            keep-mods = <(MOD_LALT)>;
         };
-
-        raise_layer {
-            // -----------------------------------------------------------------------------------------
-            // |     | NMLK |  /  |  7  |  8  |  9  |  -  |   | VOLU| HOME| PRSC| PGUP| SCLK| CLCK|     |
-            //       | CTRL |  *  |  4  |  5  |  6  |  +  |   | MUT | LEFT|  UP | RGHT| INS | APP |
-            //       |      |  0  |  1  |  2  |  3  |  .  |   | VOLD| END | DOWN| PGDN| PAUS|     |
-            //                          |     |     | ADJ |   | ADJ |     |     |
-
-            bindings = <
-        &trans           &trans           &trans     &trans     &trans     &trans          &trans        &trans    &trans     &trans     &trans           &trans
-&trans  &kp KP_NUM       &kp KP_SLASH     &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp KP_MINUS    &kp C_VOL_UP  &kp HOME  &kp PSCRN  &kp PG_UP  &kp SLCK         &kp CAPS         &trans
-        &mt LCTRL EQUAL  &kp KP_MULTIPLY  &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp KP_PLUS     &kp C_MUTE    &kp LEFT  &kp UP     &kp RIGHT  &kp INS          &mt RCTRL K_APP
-        &trans           &kp KP_N0        &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_DOT      &kp C_VOL_DN  &kp END   &kp DOWN   &kp PG_DN  &kp PAUSE_BREAK  &trans
-                                                     &trans     &trans     &lt 3 RET       &lt 3 ESC     &trans    &trans
-            >;
+        alttab_f_or_f: alt_tab_forward {
+            compatible = "zmk,behavior-mod-morph";
+            label = "ALT_TAB_F";
+            #binding-cells = <0>;
+            bindings = <&kp F>, <&kp TAB>;
+            mods = <(MOD_LALT)>;
+            keep-mods = <(MOD_LALT)>;
         };
-
-        adjust_layer {
-            // -----------------------------------------------------------------------------------------
-            // | RST | BLDR |     |     |     |     |     |   |     |     |     |     |     | BLDR | RST |
-            //       | BTCLR| BT0 | BT1 | BT2 | BT3 | BT4 |   | BT4 | BT3 | BT2 | BT1 | BT0 | BTCLR|
-            //       |      |     |     |     |     |     |   |     |     |     |     |     |      |
-            //                          |     |     |     |   |     |     |     |
-
-            bindings = <
-            &none        &none         &none         &none         &none         &none           &none         &none         &none         &none         &none         &none
-&sys_reset  &bootloader  &none         &none         &none         &none         &none           &none         &none         &none         &none         &none         &bootloader  &sys_reset
-            &bt BT_CLR   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &bt BT_SEL 4  &bt BT_SEL 3  &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_SEL 0  &bt BT_CLR
-            &none        &none         &none         &none         &none         &none           &none         &none         &none         &none         &none         &none
-                                                     &trans        &none         &trans          &trans        &none         &trans
-            >;
+        
+        ALT: alt_for_alttab {
+            compatible = "zmk,behavior-hold-tap";
+            label = "ALTTAB";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <150>;
+            quick-tap-ms = <150>;
+            retro-tap;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <1>;
         };
     };
+};
+
+
+/ {
+    combos {
+        compatible = "zmk,combos";
+        combo_esc {
+            timeout-ms = <30>;
+            key-positions = <50 51>;
+            bindings = <&mo LR_NAV>;
+        };
+        combo_collapse {
+            timeout-ms = <50>;
+            key-positions = <28 29 30>;
+            bindings = <&kp LG(M)>;
+        };
+        combo_printscreen {
+            timeout-ms = <50>;
+            key-positions = <30 42>;
+            bindings = <&kp RG(RS(S))>;
+        };
+        combo_ctl_enter {
+            timeout-ms = <30>;
+            key-positions = <51 52>;
+            bindings = <&kp LC(RET)>;
+        };
+    };
+};
+
+
+/ {
+        keymap {
+                compatible = "zmk,keymap";
+
+                default_layer {
+// -----------------------------------------------------------------------------------------
+// |  GUI |   ~  |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  |  [   | GUI/] |
+//        | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |CTRL/'|
+//        | LALT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | RALT |
+//                           | RSE | SPC | LWR |   | LWR | BKSP | RSE |
+                        bindings = <
+            &kp F12  &kp EXCL     &kp AT        &kp HASH  &kp DLLR &kp PERCENT               &kp CARET &kp AMPERSAND      &kp ASTERISK    &kp N9   &kp N0  &kp BACKSLASH
+   &kp LWIN &kp TAB   &kp Q   &kp W   &kp E   &kp R   &kp T              &kp Y  &kp U       &kp I     &kp O    &kp P     &kp LBKT     &mt RWIN RBKT
+            &kp ESC    &lt LR_NUM A   &alttab_b_or_s   &ALT LALT D   &alttab_f_or_f   &kp G      &kp H  &kp J       &kp K     &kp L    &kp SEMI  &mt RCTRL SQT
+            &kp LALT   &kp Z   &kp X   &kp C   &kp V &kp B               &kp N  &kp M  &kp COMMA   &kp DOT   &kp FSLH &kp LA(LEFT_SHIFT)
+                         &sk LSHFT &mt LCTRL RET &lt LWR BSPC          &lt LR_DEL LS(FSLH) &lt LR_NAV SPACE &lt LR_NAV FSLH
+                        >;
+                };
+                lower_layer {
+// -----------------------------------------------------------------------------------------
+// |     |  _  |  F1 |  F2 |  F3 |  F4 |  F5 |   |  F6 |  F7 |  F8 |  F9 | F10 | F11 | F12 |
+//       |  +  |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  |  -  |
+//       |  =  |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  |     |
+//                    | GUI |     | SPC |   | ENT |     | ALT |
+                        bindings = <
+        &trans    &trans &kp EXCL &trans &trans &trans &trans &trans &trans &trans &trans &trans
+        &trans    &kp UNDER      &kp F1        &kp F2    &kp F3    &kp F4   &kp F5               &kp F6    &kp AMPERSAND &kp F8 &kp F9   &kp F10  &kp F11 &kp F12
+                  &kp GRAVE &kp EXCL     &kp AT        &kp HASH  &kp DLLR  &kp PRCNT        &kp CARET &kp RIGHT_BRACKET &kp LEFT_BRACKET &kp RPAR &kp LPAR &trans 
+                  &mt LALT EQUAL &kp SLASH    &kp ASTERISK  &kp MINUS &kp EQUAL &kp PLUS        &kp UNDER &kp RIGHT_BRACE  &kp LEFT_BRACE  &kp GREATER_THAN  &kp LESS_THAN  &trans 
+                                              &lt ADJ TAB &trans &trans   &trans &trans &lt ADJ DEL
+                        >;
+                };
+
+                raise_layer {
+// -----------------------------------------------------------------------------------------
+// |     | NMLK |  /  |  7  |  8  |  9  |  -  |   | VOLU| HOME| PRSC| PGUP| SCLK| CLCK|     |
+//       | CTRL |  *  |  4  |  5  |  6  |  +  |   | MUT | LEFT|  UP | RGHT| INS | APP |
+//       |      |  0  |  1  |  2  |  3  |  .  |   | VOLD| END | DOWN| PGDN| PAUS|     |
+//                          |     |     | ADJ |   | ADJ |     |     |
+                        bindings = <
+                        &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+   &trans &kp KP_NUM      &kp KP_SLASH    &kp KP_N7 &kp KP_N8 &kp KP_N9 &kp KP_MINUS        &kp C_VOL_UP &kp HOME &kp PSCRN &kp PG_UP &kp SLCK &kp CAPS &trans
+          &mt LCTRL EQUAL &kp KP_MULTIPLY &kp KP_N4 &kp KP_N5 &kp KP_N6 &kp KP_PLUS         &kp C_MUTE   &kp LEFT &kp UP    &kp RIGHT &kp INS  &mt RCTRL K_APP
+          &trans          &kp KP_N0       &kp KP_N1 &kp KP_N2 &kp KP_N3 &kp KP_DOT          &kp C_VOL_DN &kp END  &kp DOWN  &kp PG_DN &kp PAUSE_BREAK &trans
+                                                           &trans &trans &lt ADJ RET   &lt ADJ ESC &trans &trans
+                        >;
+                };
+                adjust_layer {
+// -----------------------------------------------------------------------------------------
+// | RST | BLDR |     |     |     |     |     |   |     |     |     |     |     | BLDR | RST |
+//       | BTCLR| BT0 | BT1 | BT2 | BT3 | BT4 |   | BT4 | BT3 | BT2 | BT1 | BT0 | BTCLR|
+//       |      |     |     |     |     |     |   |     |     |     |     |     |      |
+//                          |     |     |     |   |     |     |     |
+                        bindings = <
+          &none &none &none &none &none &none &none &none &none &none &none &none
+   &sys_reset &bootloader  &none        &none        &none        &none        &none              &none        &none        &none        &none        &none         &bootloader &sys_reset
+          &bt BT_CLR   &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4       &bt BT_SEL 4 &bt BT_SEL 3 &bt BT_SEL 2 &bt BT_SEL 1 &bt BT_SEL 0  &bt BT_CLR
+          &none        &none        &none        &none        &none        &none              &none        &none        &none        &none        &none         &none
+                                                                    &trans &out OUT_TOG &trans   &trans &none &trans
+                        >;
+                };
+                num_layer {
+
+                        bindings = <
+              &none  &none &none &none &none &none       &none &none &none &none &none &none
+   &none      &none  &none &kp N7 &kp N8 &kp N9 &kp COMMA       &none &none &none &none &none &none &none
+              &none  &none &kp N4 &kp N5 &kp N6 &kp N0       &none &none &none &none &none &none
+              &none  &none &kp N1 &kp N2 &kp N3 &none       &none &none &none &none &none &none
+                                &trans &none &trans      &trans &none &trans
+                        >;
+                };
+                del_layer {
+
+                        bindings = <
+              &none  &none &none &none &none &none                    &none &none &none &none &none &none
+   &none      &none  &none &none &none &none &none             &none &delete_begin_line &none &none &delete_end_line &none &none
+             &none  &none &none &none &none &none       &none   &kp BSPC  &kp DOWN    &kp UP  &kp DEL  &none
+              &none  &none &none &none &none &none       &none   &kp LC(BSPC)     &kp LC(DOWN)     &kp LC(UP)      &kp LC(DEL)      &none
+                                &trans &none &trans      &trans &none &trans
+                        >;
+                };
+                nav_layer {
+
+                        bindings = <
+              &none  &none &none &none &none &none                        &none &none    &none     &none     &none      &none
+   &none      &none  &none &none &none &none &none                        &none   &kp HOME  &kp PG_DN &kp PG_UP &kp END      &none &none
+              &none   &kp LEFT  &kp DOWN    &kp UP  &kp RIGHT  &none      &none   &kp LEFT  &kp DOWN    &kp UP  &kp RIGHT  &none
+              &none  &none &none &none &none &none                        &none   &kp LC(LEFT)     &kp LC(DOWN)     &kp LC(UP)      &kp LC(RIGHT)      &none
+                                &trans &none &trans      &trans &none &trans
+                        >;
+                };
+        };
 };
