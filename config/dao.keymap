@@ -94,27 +94,27 @@
     combos {
         compatible = "zmk,combos";
 
-        combo_esc {
+        combo_navigatio {
             timeout-ms = <30>;
-            key-positions = <51 52>;
+            key-positions = <51 42>;
             bindings = <&mo 5>;
         };
 
         combo_collapse {
             timeout-ms = <50>;
-            key-positions = <28 29 30>;
+            key-positions = <30 42>;
             bindings = <&kp LG(M)>;
         };
 
         combo_printscreen {
             timeout-ms = <50>;
-            key-positions = <30 42>;
+            key-positions = <30 17>;
             bindings = <&kp RG(RS(S))>;
         };
 
         combo_ctl_enter {
             timeout-ms = <30>;
-            key-positions = <51 50>;
+            key-positions = <30 31>;
             bindings = <&kp LC(RET)>;
         };
     };
