@@ -162,7 +162,7 @@
 
             bindings = <
         &trans          &trans     &kp EXCL      &trans     &trans     &trans       &trans     &trans             &trans            &trans            &trans         &trans
-&trans  &kp UNDER       &kp F1     &kp F2        &kp F3     &kp F4     &kp F5       &kp F6     &kp AMPERSAND      &kp F8            &kp F9            &kp F10        &kp F11  &kp F12
+&trans  &kp UNDER       &kp F1     &kp F2        &kp F3     &kp F4     &kp F5       &kp F6     &kp LS(QUESTION)   &kp F8            &kp F9            &kp F10        &kp F11  &kp F12
         &kp GRAVE       &kp EXCL   &kp AT        &kp HASH   &kp DLLR   &kp PRCNT    &kp CARET  &kp RIGHT_BRACKET  &kp LEFT_BRACKET  &kp RPAR          &kp LPAR       &trans
         &mt LALT EQUAL  &kp SLASH  &kp ASTERISK  &kp MINUS  &kp EQUAL  &kp PLUS     &kp UNDER  &kp RIGHT_BRACE    &kp LEFT_BRACE    &kp GREATER_THAN  &kp LESS_THAN  &trans
                                                  &mo 3      &trans     &trans       &trans     &trans             &lt 3 DEL
