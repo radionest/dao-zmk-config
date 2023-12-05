@@ -221,11 +221,11 @@
 
         num_layer {
             bindings = <
-       &none  &none  &none   &none   &none   &none         &none   &none  &none   &none  &none  &none
-&none  &none  &none  &kp N7  &kp N8  &kp N9  &kp KP_DOT    &none   &none  &none   &none  &none  &none  &none
-       &none  &none  &kp N4  &kp N5  &kp N6  &kp N0        &none   &none  &none   &none  &none  &none
-       &none  &none  &kp N1  &kp N2  &kp N3  &none         &none   &none  &none   &none  &none  &none
-                             &trans  &none   &trans        &trans  &none  &trans
+       &none  &none   &none   &none   &none   &none         &none   &none  &none   &none  &none  &none
+&none  &none  &none   &kp N7  &kp N8  &kp N9  &kp KP_DOT    &none   &none  &none   &none  &none  &none  &none
+       &none  &trans  &kp N4  &kp N5  &kp N6  &kp N0        &none   &none  &none   &none  &none  &none
+       &none  &none   &kp N1  &kp N2  &kp N3  &none         &none   &none  &none   &none  &none  &none
+                              &trans  &none   &trans        &trans  &none  &trans
             >;
         };
 
