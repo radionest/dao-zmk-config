@@ -40,6 +40,13 @@
             #binding-cells = <0>;
             bindings = <&macro_tap>, <&kp LS(HOME) &kp DEL>;
         };
+
+        lang_shift: lang_shift {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LA(LSHIFT) &tog 7>;
+            label = "LANG_SHIFT";
+        };
     };
 };
 
@@ -97,7 +104,7 @@
         combo_navigatio {
             timeout-ms = <30>;
             key-positions = <51 42>;
-            bindings = <&mo 5>;
+            bindings = <&mo 6>;
         };
 
         combo_collapse {
@@ -117,6 +124,12 @@
             key-positions = <30 31>;
             bindings = <&kp LC(RET)>;
         };
+
+        goto_default_layer {
+            bindings = <&to 0>;
+            key-positions = <12 25>;
+            timeout-ms = <200>;
+        };
     };
 };
 
@@ -133,14 +146,14 @@
 
             bindings = <
           &kp F12           &kp EXCL  &kp AT  &kp HASH     &kp DLLR              &kp PERCENT    &kp CARET       &kp AMPERSAND  &kp ASTERISK  &kp N9   &kp N0    &kp BACKSLASH
-&kp LWIN  &kp TAB           &kp Q     &kp W   &kp E        &alttab_forward_or_r  &kp T          &kp Y           &kp U          &kp I         &kp O    &kp P     &kp LBKT            &mt RWIN RBKT
-          &shift_grave_esc  &lt 3 A   &kp S   &ALT LALT D  &kp F                 &kp G          &kp H           &kp J          &kp K         &kp L    &kp SEMI  &mt RCTRL SQT
-          &kp LALT          &kp Z     &kp X   &kp C        &alttab_back_or_v     &kp B          &kp N           &kp M          &kp COMMA     &kp DOT  &kp FSLH  &kp LA(LEFT_SHIFT)
-                                              &sk LSHFT    &mt LCTRL RET         &lt 1 BSPC     &lt 4 LS(FSLH)  &lt 5 SPACE    &lt 5 FSLH
+&kp LWIN  &kp TAB           &kp Q     &kp W   &kp E        &alttab_forward_or_r  &kp T          &kp Y           &kp U          &kp I         &kp O    &kp P     &kp LBKT       &mt RWIN RBKT
+          &shift_grave_esc  &lt 4 A   &kp S   &ALT LALT D  &kp F                 &kp G          &kp H           &kp J          &kp K         &kp L    &kp SEMI  &mt RCTRL SQT
+          &kp LALT          &kp Z     &kp X   &kp C        &alttab_back_or_v     &kp B          &kp N           &kp M          &kp COMMA     &kp DOT  &kp FSLH  &lang_shift
+                                              &sk LSHFT    &mt LCTRL RET         &lt 1 BSPC     &lt 5 LS(FSLH)  &lt 6 SPACE    &lt 6 FSLH
             >;
         };
 
-        lower_layer {
+        symbols_eng_layer {
             // -----------------------------------------------------------------------------------------
             // |     |  _  |  F1 |  F2 |  F3 |  F4 |  F5 |   |  F6 |  F7 |  F8 |  F9 | F10 | F11 | F12 |
             //       |  +  |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  |  -  |
@@ -152,7 +165,17 @@
 &trans  &kp UNDER       &kp F1     &kp F2        &kp F3     &kp F4     &kp F5       &kp F6     &kp AMPERSAND      &kp F8            &kp F9            &kp F10        &kp F11  &kp F12
         &kp GRAVE       &kp EXCL   &kp AT        &kp HASH   &kp DLLR   &kp PRCNT    &kp CARET  &kp RIGHT_BRACKET  &kp LEFT_BRACKET  &kp RPAR          &kp LPAR       &trans
         &mt LALT EQUAL  &kp SLASH  &kp ASTERISK  &kp MINUS  &kp EQUAL  &kp PLUS     &kp UNDER  &kp RIGHT_BRACE    &kp LEFT_BRACE    &kp GREATER_THAN  &kp LESS_THAN  &trans
-                                                 &mo 2      &trans     &trans       &trans     &trans             &lt 2 DEL
+                                                 &mo 3      &trans     &trans       &trans     &trans             &lt 3 DEL
+            >;
+        };
+
+        symbols_rus_layer {
+            bindings = <
+        &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
+        &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+        &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                                &trans  &trans  &trans    &trans  &trans  &trans
             >;
         };
 
@@ -204,11 +227,11 @@
 
         ENG_layer {
             bindings = <
-        &kp F12           &kp EXCL  &kp AT  &kp HASH     &kp DLLR              &kp PERCENT    &kp CARET       &kp AMPERSAND  &kp ASTERISK  &kp N9   &kp N0    &kp BACKSLASH
-&kp LWIN  &kp TAB           &kp Q     &kp W   &kp E        &alttab_forward_or_r  &kp T          &kp Y           &kp U          &kp I         &kp O    &kp P     &kp LBKT            &mt RWIN RBKT
-          &shift_grave_esc  &lt 3 A   &kp S   &ALT LALT D  &kp F                 &kp G          &kp H           &kp J          &kp K         &kp L    &kp SEMI  &mt RCTRL SQT
-          &kp LALT          &kp Z     &kp X   &kp C        &alttab_back_or_v     &kp B          &kp N           &kp M          &kp COMMA     &kp DOT  &kp FSLH  &kp LA(LEFT_SHIFT)
-                                              &sk LSHFT    &mt LCTRL RET         &lt 1 BSPC     &lt 4 LS(FSLH)  &lt 5 SPACE    &lt 5 FSLH
+          &kp F12           &kp EXCL  &kp AT  &kp HASH     &kp DLLR              &kp PERCENT    &kp CARET    &kp AMPERSAND  &kp ASTERISK  &kp N9   &kp N0    &kp BACKSLASH
+&kp LWIN  &kp TAB           &kp Q     &kp W   &kp E        &alttab_forward_or_r  &kp T          &kp Y        &kp U          &kp I         &kp O    &kp P     &kp LBKT       &mt RWIN RBKT
+          &shift_grave_esc  &lt 4 A   &kp S   &ALT LALT D  &kp F                 &kp G          &kp H        &kp J          &kp K         &kp L    &kp SEMI  &mt RCTRL SQT
+          &kp LALT          &kp Z     &kp X   &kp C        &alttab_back_or_v     &kp B          &kp N        &kp M          &kp COMMA     &kp DOT  &kp FSLH  &lang_shift
+                                              &sk LSHFT    &mt LCTRL RET         &lt 1 BSPC     &lt 5 COMMA  &lt 6 SPACE    &lt 6 DOT
             >;
         };
     };
