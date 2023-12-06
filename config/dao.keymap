@@ -81,23 +81,6 @@
             wait-ms = <1>;
         };
 
-        test: test {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LEFT_SHIFT>,
-                <&macro_tap>,
-                <&kp S &kp D &kp F>,
-                <&macro_pause_for_release>,
-                <&macro_release>,
-                <&kp LEFT_SHIFT>,
-                <&macro_tap>,
-                <&kp A &kp S &kp D>;
-
-            label = "TEST";
-        };
-
         tog_lang: tog_lang {
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
@@ -110,6 +93,19 @@
             label = "TOG_LANG";
             tap-ms = <1>;
             wait-ms = <1>;
+        };
+
+        nbsp: nbsp {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_ALT>,
+                <&macro_press>,
+                <&macro_press>,
+                <&kp &kp &kp S &kp D &kp F>;
+
+            label = "NBSP";
         };
     };
 };
@@ -255,7 +251,7 @@
 
             bindings = <
            &trans         &trans     &trans        &trans          &trans     &trans       &trans     &trans             &trans            &trans            &trans             &trans
-&kp TILDE  &kp PIPE       &kp F1     &tog_lang AT  &tog_lang HASH  &kp DLLR   &kp F5       &kp CARET  &kp QUESTION       &kp AMPERSAND     &kp SINGLE_QUOTE  &kp DOUBLE_QUOTES  &kp LA(LSHFT)  &kp LALT
+&kp TILDE  &kp PIPE       &kp F1     &tog_lang AT  &tog_lang HASH  &kp DLLR   &kp F5       &kp CARET  &kp QUESTION       &kp AMPERSAND     &kp SINGLE_QUOTE  &kp DOUBLE_QUOTES  &kp LA(LSHFT)  &nbsp
            &kp GRAVE      &kp EXCL   &kp AT        &kp HASH        &kp SEMI   &kp PRCNT    &kp COLON  &kp RIGHT_BRACKET  &kp LEFT_BRACKET  &kp RPAR          &kp LPAR           &trans
            &kp BACKSLASH  &kp SLASH  &kp ASTERISK  &kp MINUS       &kp EQUAL  &kp PLUS     &kp UNDER  &kp RIGHT_BRACE    &kp LEFT_BRACE    &kp GREATER_THAN  &kp LESS_THAN      &trans
                                                    &mo 6           &trans     &trans       &trans     &trans             &lt 6 DEL
