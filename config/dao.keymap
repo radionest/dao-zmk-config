@@ -77,7 +77,8 @@
                 <&kp LA(LEFT_SHIFT)>;
 
             label = "GOTO_SYMBOL_LAYER_CHANGELANG";
-            tap-ms = <10>;
+            tap-ms = <(-1)>;
+            wait-ms = <(-1)>;
         };
 
         test: test {
