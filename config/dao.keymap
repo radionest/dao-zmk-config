@@ -224,11 +224,11 @@
 
         ENG_layer {
             bindings = <
-          &trans           &trans  &trans  &trans     &trans              &trans   &trans &trans &trans &trans &trans &trans
-&trans  &trans          &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-          &trans  &trans   &trans   &trans &trans                 &trans &trans &trans &trans &trans &trans &trans
-          &trans &trans &trans &trans &trans &trans     &trans &trans &trans &trans &trans  &lang_rus
-                                              &trans &trans         &lt 2 BSPC     &lt 4 COMMA  &trans   &lt 5 DOT
+        &trans  &trans  &trans  &trans  &trans  &trans        &trans       &trans  &trans     &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans        &trans       &trans  &trans     &trans  &trans  &trans     &trans
+        &trans  &trans  &trans  &trans  &trans  &trans        &trans       &trans  &trans     &trans  &trans  &trans
+        &trans  &trans  &trans  &trans  &trans  &trans        &trans       &trans  &trans     &trans  &trans  &lang_rus
+                                &trans  &trans  &lt 2 BSPC    &lt 4 COMMA  &trans  &lt 5 DOT
             >;
         };
 
@@ -250,11 +250,11 @@
 
         num_layer {
             bindings = <
-       &none  &none   &none   &none   &none   &none         &none   &none  &none   &none  &none  &none
-&none  &none  &none   &kp N7  &kp N8  &kp N9  &kp KP_DOT    &none   &none  &none   &none  &none  &none  &none
-       &none  &trans  &kp N4  &kp N5  &kp N6  &kp N0        &none   &none  &none   &none  &none  &none
-       &none  &none   &kp N1  &kp N2  &kp N3  &none         &none   &none  &none   &none  &none  &none
-                              &trans  &none   &trans        &trans  &none  &trans
+       &none  &none   &none   &none   &none   &none        &none   &none  &none   &none  &none  &none
+&none  &none  &none   &kp N7  &kp N8  &kp N9  &kp SLASH    &none   &none  &none   &none  &none  &none  &none
+       &none  &trans  &kp N4  &kp N5  &kp N6  &kp N0       &none   &none  &none   &none  &none  &none
+       &none  &none   &kp N1  &kp N2  &kp N3  &none        &none   &none  &none   &none  &none  &none
+                              &trans  &none   &trans       &trans  &none  &trans
             >;
         };
 
