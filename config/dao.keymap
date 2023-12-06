@@ -90,7 +90,9 @@
                 <&kp S &kp D &kp F>,
                 <&macro_pause_for_release>,
                 <&macro_release>,
-                <&kp LEFT_SHIFT>;
+                <&kp LEFT_SHIFT>,
+                <&macro_tap>,
+                <&kp A &kp S &kp D>;
 
             label = "TEST";
         };
