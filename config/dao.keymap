@@ -225,9 +225,9 @@
         ENG_layer {
             bindings = <
           &trans           &trans  &trans  &trans     &trans              &trans   &trans &trans &trans &trans &trans &trans
-&&trans  &trans          &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+&trans  &trans          &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
           &trans  &trans   &trans   &trans &trans                 &trans &trans &trans &trans &trans &trans &trans
-          &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans  &lang_rus
+          &trans &trans &trans &trans &trans &trans     &trans &trans &trans &trans &trans  &lang_rus
                                               &trans &trans         &lt 2 BSPC     &lt 4 COMMA  &trans   &lt 5 DOT
             >;
         };
