@@ -113,8 +113,6 @@
             quick-tap-ms = <150>;
             retro-tap;
             bindings = <&kp>, <&kp>;
-
-            hold-trigger-key-positions = <1>;
         };
 
         shift_grave_esc: shift_grave_esc {
