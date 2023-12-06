@@ -68,7 +68,10 @@
             bindings =
                 <&macro_press>,
                 <&kp LA(LEFT_SHIFT) &mo 2>,
+                <&macro_pause_for_release>,
                 <&macro_release>,
+                <&mo 2>,
+                <&macro_press>,
                 <&kp LA(LEFT_SHIFT)>,
                 <&macro_tap>,
                 <&kp BACKSPACE>;
