@@ -172,7 +172,7 @@
 
         combo_navigatio {
             timeout-ms = <30>;
-            key-positions = <51 42>;
+            key-positions = <51 43>;
             bindings = <&mo 5>;
         };
 
