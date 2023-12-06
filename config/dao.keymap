@@ -164,16 +164,6 @@
             flavor = "hold-preferred";
             tapping-term-ms = <200>;
         };
-
-        test_behavior: test_behavior {
-            compatible = "zmk,behavior-hold-tap";
-            label = "TEST_BEHAVIOR";
-            bindings = <&test>, <&kp>;
-
-            #binding-cells = <2>;
-            flavor = "hold-preferred";
-            tapping-term-ms = <6>;
-        };
     };
 };
 
