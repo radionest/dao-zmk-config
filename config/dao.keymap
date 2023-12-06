@@ -77,6 +77,7 @@
                 <&kp LA(LEFT_SHIFT)>;
 
             label = "GOTO_SYMBOL_LAYER_CHANGELANG";
+            tap-ms = <10>;
         };
     };
 };
@@ -132,7 +133,7 @@
             bindings = <&goto_symbol_layer_changelang>, <&kp>;
 
             #binding-cells = <2>;
-            flavor = "balanced";
+            flavor = "tap-preferred";
             retro-tap;
             tapping-term-ms = <6>;
         };
