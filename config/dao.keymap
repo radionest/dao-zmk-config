@@ -97,6 +97,20 @@
 
             label = "TEST";
         };
+
+        tog_lang: tog_lang {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            bindings =
+                <&macro_tap>,
+                <&kp LA(LEFT_SHIFT) &macro_param_1to1 &kp MACRO_PLACEHOLDER>,
+                <&macro_tap>,
+                <&kp LA(LEFT_SHIFT)>;
+
+            label = "TOG_LANG";
+            tap-ms = <1>;
+            wait-ms = <1>;
+        };
     };
 };
 
@@ -240,10 +254,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-        &trans         &trans     &trans        &trans     &trans     &trans       &trans     &trans             &trans            &trans            &trans         &trans
-&trans  &kp PIPE       &kp F1     &kp F2        &kp F3     &kp F4     &kp F5       &kp CARET  &kp QUESTION       &kp AMPERSAND     &kp LA(LSHFT)     &kp LALT       &kp LA(LSHFT)  &kp LALT
-        &kp GRAVE      &kp EXCL   &kp AT        &kp SEMI   &kp DLLR   &kp PRCNT    &kp COLON  &kp RIGHT_BRACKET  &kp LEFT_BRACKET  &kp RPAR          &kp LPAR       &trans
-        &kp BACKSLASH  &kp SLASH  &kp ASTERISK  &kp MINUS  &kp EQUAL  &kp PLUS     &kp UNDER  &kp RIGHT_BRACE    &kp LEFT_BRACE    &kp GREATER_THAN  &kp LESS_THAN  &trans
+        &trans         &trans     &trans        &trans     &trans     &trans       &trans     &trans             &trans            &trans            &trans             &trans
+&trans  &kp PIPE       &kp F1     &tog_lang AT  &kp F3     &kp F4     &kp F5       &kp CARET  &kp QUESTION       &kp AMPERSAND     &kp SINGLE_QUOTE  &kp DOUBLE_QUOTES  &kp LA(LSHFT)  &kp LALT
+        &kp GRAVE      &kp EXCL   &kp AT        &kp SEMI   &kp DLLR   &kp PRCNT    &kp COLON  &kp RIGHT_BRACKET  &kp LEFT_BRACKET  &kp RPAR          &kp LPAR           &trans
+        &kp BACKSLASH  &kp SLASH  &kp ASTERISK  &kp MINUS  &kp EQUAL  &kp PLUS     &kp UNDER  &kp RIGHT_BRACE    &kp LEFT_BRACE    &kp GREATER_THAN  &kp LESS_THAN      &trans
                                                 &mo 6      &trans     &trans       &trans     &trans             &lt 6 DEL
             >;
         };
