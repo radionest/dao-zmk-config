@@ -66,20 +66,17 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
+                <&macro_tap>,
+                <&kp LA(LEFT_SHIFT)>,
                 <&macro_press>,
                 <&mo 2>,
                 <&macro_pause_for_release>,
                 <&macro_release>,
-                <&mo 2>;
+                <&mo 2>,
+                <&macro_tap>,
+                <&kp LA(LEFT_SHIFT)>;
 
             label = "GOTO_SYMBOL_LAYER_CHANGELANG";
-        };
-
-        new_macro: new_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LA(LEFT_SHIFT) &goto_symbol_layer_changelang &kp LA(LEFT_SHIFT)>;
-            label = "NEW_MACRO";
         };
     };
 };
