@@ -129,7 +129,7 @@
         new_behavior: new_behavior {
             compatible = "zmk,behavior-hold-tap";
             label = "NEW_BEHAVIOR";
-            bindings = <&new_macro>, <&kp>;
+            bindings = <&goto_symbol_layer_changelang>, <&kp>;
 
             #binding-cells = <2>;
             flavor = "tap-preferred";
