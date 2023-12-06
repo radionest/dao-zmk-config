@@ -66,13 +66,15 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
+                <&macro_tap>,
+                <&kp LA(LEFT_SHIFT)>,
                 <&macro_press>,
-                <&kp LA(LEFT_SHIFT) &mo 2>,
+                <&mo 2>,
                 <&macro_pause_for_release>,
                 <&macro_release>,
                 <&mo 2>,
-                <&macro_press>,
-                <&kp LA(LEFT_SHIFT) &kp BACKSPACE>;
+                <&macro_tap>,
+                <&kp LA(LEFT_SHIFT)>;
 
             label = "GOTO_SYMBOL_LAYER_CHANGELANG";
         };
