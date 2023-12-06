@@ -225,10 +225,10 @@
         ENG_layer {
             bindings = <
           &trans           &trans  &trans  &trans     &trans              &trans   &trans &trans &trans &trans &trans &trans
-&kp LWIN  &kp TAB           &kp Q     &kp W   &kp E        &alttab_forward_or_r  &kp T          &kp Y        &kp U          &kp I         &kp O    &kp P     &kp LBKT       &mt RWIN RBKT
-          &shift_grave_esc  &lt 3 A   &kp S   &ALT LALT D  &kp F                 &kp G          &kp H        &kp J          &kp K         &kp L    &kp SEMI  &mt RCTRL SQT
-          &kp LALT          &kp Z     &kp X   &kp C        &alttab_back_or_v     &kp B          &kp N        &kp M          &kp COMMA     &kp DOT  &kp FSLH  &lang_rus
-                                              &sk LSHFT    &mt LCTRL RET         &lt 2 BSPC     &lt 4 COMMA  &lt 5 SPACE    &lt 5 DOT
+&&trans  &trans          &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+          &trans  &trans   &trans   &trans &trans                 &trans &trans &trans &trans &trans &trans &trans
+          &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans  &lang_rus
+                                              &trans &trans         &lt 2 BSPC     &lt 4 COMMA &trans    &lt 5 DOT
             >;
         };
 
