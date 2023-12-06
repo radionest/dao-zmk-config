@@ -132,7 +132,7 @@
             bindings = <&goto_symbol_layer_changelang>, <&kp>;
 
             #binding-cells = <2>;
-            flavor = "hold-preferred";
+            flavor = "balanced";
             retro-tap;
             tapping-term-ms = <6>;
         };
