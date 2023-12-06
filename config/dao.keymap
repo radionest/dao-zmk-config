@@ -74,7 +74,8 @@
                 <&macro_release>,
                 <&mo 2>,
                 <&macro_tap>,
-                <&kp LA(LEFT_SHIFT)>;
+                <&kp LA(LEFT_SHIFT)>,
+                <&macro_press>;
 
             label = "GOTO_SYMBOL_LAYER_CHANGELANG";
             tap-ms = <10>;
