@@ -161,7 +161,7 @@
             bindings = <&goto_symbol_layer_changelang>, <&kp>;
 
             #binding-cells = <2>;
-            flavor = "hold-preferred";
+            flavor = "balanced";
             tapping-term-ms = <200>;
         };
     };
