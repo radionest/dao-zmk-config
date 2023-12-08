@@ -19,6 +19,7 @@
 
 &lt {
     quick_tap_ms = <200>;
+    flavor = "balanced";
 };
 
 &mt {
