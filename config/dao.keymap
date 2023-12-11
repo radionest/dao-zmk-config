@@ -194,7 +194,7 @@
 
         combo_ctl_enter {
             timeout-ms = <30>;
-            key-positions = <30 31>;
+            key-positions = <31 18>;
             bindings = <&kp LC(RET)>;
         };
 
