@@ -175,7 +175,7 @@
         compatible = "zmk,combos";
 
         combo_navigatio {
-            timeout-ms = <30>;
+            timeout-ms = <70>;
             key-positions = <51 43>;
             bindings = <&mo 5>;
         };
