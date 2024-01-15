@@ -166,6 +166,18 @@
             flavor = "balanced";
             tapping-term-ms = <150>;
         };
+
+        homerow_right: homerow_right {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_RIGHT";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            hold-trigger-key-positions = <12 26 13 0 1 14 27 39 38 40 28 15 2 3 29 16 41 42 30 17 4 5 18 43 31 51 50 52>;
+            flavor = "tap-preferred";
+            retro-tap;
+            tapping-term-ms = <200>;
+        };
     };
 };
 
