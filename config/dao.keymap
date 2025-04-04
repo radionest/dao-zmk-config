@@ -291,11 +291,11 @@
 
         nav_layer {
             bindings = <
-       &none  &none         &none       &none          &none          &none      &none   &none         &none         &none       &none          &none
-&none  &none  &kp HOME      &kp PG_UP   &kp PAGE_DOWN  &kp END        &none      &none   &kp HOME      &kp PG_DN     &kp PG_UP   &kp END        &none  &none
-       &none  &kp LEFT      &kp UP      &kp DOWN       &kp RIGHT      &none      &none   &kp LEFT      &kp DOWN      &kp UP      &kp RIGHT      &none
-       &none  &kp LC(LEFT)  &kp LC(UP)  &kp LC(DOWN)   &kp LC(RIGHT)  &kp RET    &none   &kp LC(LEFT)  &kp LC(DOWN)  &kp LC(UP)  &kp LC(RIGHT)  &none
-                                        &trans         &none          &trans     &trans  &none         &trans
+       &none   &none         &none       &none          &none          &none      &none         &none         &none         &none       &none          &none
+&none  &none   &kp HOME      &kp PG_UP   &kp PAGE_DOWN  &kp END        &none      &kp LEFT_ALT  &kp HOME      &kp PG_DN     &kp PG_UP   &kp END        &kp RIGHT_ALT  &none
+       &none   &kp LEFT      &kp UP      &kp DOWN       &kp RIGHT      &none      &kp LSHFT     &kp LEFT      &kp DOWN      &kp UP      &kp RIGHT      &kp RSHFT
+       &trans  &kp LC(LEFT)  &kp LC(UP)  &kp LC(DOWN)   &kp LC(RIGHT)  &kp RET    &kp LCTRL     &kp LC(LEFT)  &kp LC(DOWN)  &kp LC(UP)  &kp LC(RIGHT)  &kp RCTRL
+                                         &trans         &none          &trans     &trans        &none         &trans
             >;
         };
 
