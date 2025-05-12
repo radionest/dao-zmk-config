@@ -213,12 +213,20 @@
             bindings = <&to 0>;
             key-positions = <12 25>;
             timeout-ms = <200>;
+            layers = <1>;
         };
 
         ctrl_shift {
             bindings = <&kp LC(LEFT_SHIFT)>;
             key-positions = <51 50>;
             timeout-ms = <100>;
+        };
+
+        go_to_eng_layer {
+            bindings = <&to 1>;
+            key-positions = <12 25>;
+            timeout-ms = <200>;
+            layers = <0>;
         };
     };
 };
