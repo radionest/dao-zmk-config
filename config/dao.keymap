@@ -269,11 +269,11 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-           &kp F11        &kp F6     &kp F7        &kp F8          &kp F9     &kp F10      &trans     &trans             &trans            &trans            &trans             &trans
-&kp TILDE  &kp PIPE       &kp F1     &tog_lang AT  &tog_lang HASH  &kp DLLR   &trans       &kp CARET  &kp QUESTION       &kp AMPERSAND     &kp SINGLE_QUOTE  &kp DOUBLE_QUOTES  &kp LA(LSHFT)  &kp_nbsp
-           &kp GRAVE      &kp EXCL   &kp AT        &kp HASH        &kp SEMI   &kp PRCNT    &kp COLON  &kp RIGHT_BRACKET  &kp LEFT_BRACKET  &kp RPAR          &kp LPAR           &trans
-           &kp BACKSLASH  &kp SLASH  &kp ASTERISK  &kp MINUS       &kp EQUAL  &kp PLUS     &kp UNDER  &kp RIGHT_BRACE    &kp LEFT_BRACE    &kp GREATER_THAN  &kp LESS_THAN      &trans
-                                                   &mo 6           &trans     &trans       &trans     &trans             &lt 6 DEL
+           &kp F11        &kp F6     &kp F7        &kp F8          &kp F9     &kp F10            &trans     &trans             &trans            &trans            &trans             &trans
+&kp TILDE  &kp PIPE       &kp F1     &tog_lang AT  &tog_lang HASH  &kp DLLR   &tog_lang GRAVE    &kp CARET  &kp QUESTION       &kp AMPERSAND     &kp SINGLE_QUOTE  &kp DOUBLE_QUOTES  &kp LA(LSHFT)  &kp_nbsp
+           &kp GRAVE      &kp EXCL   &kp AT        &kp HASH        &kp SEMI   &kp PRCNT          &kp COLON  &kp RIGHT_BRACKET  &kp LEFT_BRACKET  &kp RPAR          &kp LPAR           &trans
+           &kp BACKSLASH  &kp SLASH  &kp ASTERISK  &kp MINUS       &kp EQUAL  &kp PLUS           &kp UNDER  &kp RIGHT_BRACE    &kp LEFT_BRACE    &kp GREATER_THAN  &kp LESS_THAN      &trans
+                                                   &mo 6           &trans     &trans             &trans     &trans             &lt 6 DEL
             >;
         };
 
@@ -315,11 +315,31 @@
             //                          |     |     |     |   |     |     |     |
 
             bindings = <
-            &none        &none         &none         &none         &none         &none           &none         &none         &none         &none         &none         &none
-&sys_reset  &bootloader  &none         &none         &none         &none         &none           &none         &none         &none         &none         &none         &bootloader  &sys_reset
-            &bt BT_CLR   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &bt BT_SEL 4  &bt BT_SEL 3  &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_SEL 0  &bt BT_CLR
-            &none        &none         &none         &none         &none         &none           &none         &none         &none         &none         &none         &none
-                                                     &trans        &out OUT_TOG  &trans          &trans        &none         &trans
+            &none        &none         &none         &none         &none         &none                  &none         &none         &none         &none         &none         &none
+&sys_reset  &bootloader  &none         &none         &none         &none         &tog_lang LS(GRAVE)    &none         &none         &none         &none         &none         &bootloader  &sys_reset
+            &bt BT_CLR   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4           &bt BT_SEL 4  &bt BT_SEL 3  &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_SEL 0  &bt BT_CLR
+            &none        &none         &none         &none         &none         &none                  &none         &none         &none         &none         &none         &none
+                                                     &trans        &out OUT_TOG  &trans                 &trans        &none         &trans
+            >;
+        };
+
+        game_BAR {
+            bindings = <
+        &trans  &trans   &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans   &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans  &trans
+        &trans  &lt 8 A  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans
+        &trans  &trans   &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans
+                                 &trans  &trans  &kp LEFT_ALT    &trans  &trans  &trans
+            >;
+        };
+
+        game_num {
+            bindings = <
+        &trans  &trans  &trans        &trans        &trans        &trans          &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &trans          &trans  &trans  &trans  &trans  &trans  &trans  &trans
+        &trans  &trans  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp NUMBER_0    &trans  &trans  &trans  &trans  &trans  &trans
+        &trans  &trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans          &trans  &trans  &trans  &trans  &trans  &trans
+                                      &trans        &trans        &trans          &trans  &trans  &trans
             >;
         };
     };
