@@ -228,6 +228,12 @@
             timeout-ms = <200>;
             layers = <0>;
         };
+
+        TOGGLE_GAME_MOD {
+            bindings = <&tog 7>;
+            key-positions = <5 4 3 2>;
+            timeout-ms = <200>;
+        };
     };
 };
 
@@ -325,21 +331,21 @@
 
         game_BAR {
             bindings = <
-        &trans  &trans   &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans   &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans  &trans
-        &trans  &lt 8 A  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans
-        &trans  &trans   &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans
-                                 &trans  &trans  &kp LEFT_ALT    &trans  &trans  &trans
+        &trans  &trans   &trans  &trans          &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans   &trans  &trans          &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans  &trans
+        &trans  &lt 8 A  &trans  &trans          &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans
+        &trans  &trans   &trans  &trans          &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans
+                                 &kp LEFT_SHIFT  &trans  &kp LEFT_ALT    &trans  &trans  &trans
             >;
         };
 
         game_num {
             bindings = <
-        &trans  &trans  &trans        &trans        &trans        &trans          &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &trans          &trans  &trans  &trans  &trans  &trans  &trans  &trans
-        &trans  &trans  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp NUMBER_0    &trans  &trans  &trans  &trans  &trans  &trans
-        &trans  &trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans          &trans  &trans  &trans  &trans  &trans  &trans
-                                      &trans        &trans        &trans          &trans  &trans  &trans
+        &trans  &trans  &trans  &trans      &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &kp N7  &kp N8      &kp N9  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
+        &trans  &trans  &kp N4  &kp N5      &kp N6  &kp N0    &trans  &trans  &trans  &trans  &trans  &trans
+        &trans  &trans  &kp N1  &kp N2      &kp N3  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                                &kp LSHIFT  &trans  &trans    &trans  &trans  &trans
             >;
         };
     };
