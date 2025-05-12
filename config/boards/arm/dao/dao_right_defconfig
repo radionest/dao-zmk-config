@@ -39,3 +39,5 @@ CONFIG_BUILD_OUTPUT_UF2=y
 
 # Increase transmit power level
 CONFIG_BT_CTLR_TX_PWR_PLUS_8=y
+
+CONFIG_PINCTRL=n
