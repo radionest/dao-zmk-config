@@ -25,6 +25,8 @@
 &mt {
 };
 
+&sl { ignore-modifiers; };
+
 / {
     macros {
         delete_end_line: delete_end_line {
@@ -389,11 +391,11 @@
 
         reverse {
             bindings = <
-        &trans  &kp F10    &kp F9   &kp F8                       &kp F7                  &kp F6                       &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &kp P      &kp O    &kp I                        &kp U                   &kp Y                        &trans  &trans  &trans  &trans  &trans  &trans  &trans
-        &trans  &kp SEMI   &kp L    &kp K                        &kp J                   &kp H                        &trans  &trans  &trans  &trans  &trans  &trans
-        &trans  &kp GRAVE  &kp DOT  &kp COMMA                    &kp M                   &kp N                        &trans  &trans  &trans  &trans  &trans  &trans
-                                    &sl_w_modifier LEFT_SHIFT 9  &sl_w_modifier LCTRL 9  &sl_w_modifier LEFT_ALT 9    &trans  &trans  &trans
+        &trans  &kp F10    &kp F9   &kp F8          &kp F7     &kp F6          &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &kp P      &kp O    &kp I           &kp U      &kp Y           &trans  &trans  &trans  &trans  &trans  &trans  &trans
+        &trans  &kp SEMI   &kp L    &kp K           &kp J      &kp H           &trans  &trans  &trans  &trans  &trans  &trans
+        &trans  &kp GRAVE  &kp DOT  &kp COMMA       &kp M      &kp N           &trans  &trans  &trans  &trans  &trans  &trans
+                                    &kp LEFT_SHIFT  &kp LCTRL  &kp LEFT_ALT    &trans  &trans  &trans
             >;
         };
     };
