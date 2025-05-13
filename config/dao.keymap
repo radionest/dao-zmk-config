@@ -187,6 +187,15 @@
             #binding-cells = <2>;
             tapping-term-ms = <100>;
         };
+
+        GAME_BAR_REVERSE: GAME_BAR_REVERSE {
+            compatible = "zmk,behavior-mod-morph";
+            label = "GAME_BAR_REVERSE";
+            bindings = <&trans>, <&mo 9>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LCTL)>;
+        };
     };
 };
 
@@ -242,6 +251,13 @@
             bindings = <&tog 7>;
             key-positions = <5 4 3 2>;
             timeout-ms = <200>;
+        };
+
+        go_to_reverse {
+            bindings = <&mo 9>;
+            key-positions = <51 43>;
+            timeout-ms = <200>;
+            layers = <7>;
         };
     };
 };
@@ -340,11 +356,11 @@
 
         game_BAR {
             bindings = <
-           &trans  &trans   &trans  &trans          &trans  &trans                          &trans  &trans  &trans  &trans  &trans  &trans
-&kp GRAVE  &trans  &trans   &trans  &trans          &trans  &trans                          &trans  &trans  &trans  &trans  &trans  &trans  &trans
-           &trans  &lt 8 A  &trans  &trans          &trans  &trans                          &trans  &trans  &trans  &trans  &trans  &trans
-           &trans  &trans   &trans  &trans          &trans  &trans                          &trans  &trans  &trans  &trans  &trans  &trans
-                                    &kp LEFT_SHIFT  &trans  &hold_pref_ht 9 LS(LEFT_ALT)    &trans  &trans  &trans
+           &trans  &trans   &trans  &trans          &trans  &trans              &trans  &trans  &trans  &trans  &trans  &trans
+&kp GRAVE  &trans  &trans   &trans  &trans          &trans  &trans              &trans  &trans  &trans  &trans  &trans  &trans  &trans
+           &trans  &lt 8 A  &trans  &trans          &trans  &trans              &trans  &trans  &trans  &trans  &trans  &trans
+           &trans  &trans   &trans  &trans          &trans  &trans              &trans  &trans  &trans  &trans  &trans  &trans
+                                    &kp LEFT_SHIFT  &trans  &kp LS(LEFT_ALT)    &trans  &trans  &trans
             >;
         };
 
