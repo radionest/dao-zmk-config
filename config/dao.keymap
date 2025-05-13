@@ -356,11 +356,11 @@
 
         game_BAR {
             bindings = <
-           &trans  &trans   &trans  &trans          &trans  &trans              &trans  &trans  &trans  &trans  &trans  &trans
-&kp GRAVE  &trans  &trans   &trans  &trans          &trans  &trans              &trans  &trans  &trans  &trans  &trans  &trans  &trans
-           &trans  &lt 8 A  &trans  &trans          &trans  &trans              &trans  &trans  &trans  &trans  &trans  &trans
-           &trans  &trans   &trans  &trans          &trans  &trans              &trans  &trans  &trans  &trans  &trans  &trans
-                                    &kp LEFT_SHIFT  &trans  &kp LS(LEFT_ALT)    &trans  &trans  &trans
+       &kp GRAVE  &trans   &trans  &trans          &trans  &trans               &trans  &trans  &trans  &trans  &trans  &trans
+&sl 9  &trans     &trans   &trans  &trans          &trans  &trans               &trans  &trans  &trans  &trans  &trans  &trans  &trans
+       &trans     &lt 8 A  &trans  &trans          &trans  &trans               &trans  &trans  &trans  &trans  &trans  &trans
+       &trans     &trans   &trans  &trans          &trans  &GAME_BAR_REVERSE    &trans  &trans  &trans  &trans  &trans  &trans
+                                   &kp LEFT_SHIFT  &trans  &kp LS(LEFT_ALT)     &trans  &trans  &trans
             >;
         };
 
