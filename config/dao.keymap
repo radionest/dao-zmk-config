@@ -25,7 +25,10 @@
 &mt {
 };
 
-&sl { ignore-modifiers; };
+&sl {
+    ignore-modifiers;
+    release-after-ms = <3000>;
+};
 
 / {
     macros {
